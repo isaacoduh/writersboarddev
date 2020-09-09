@@ -6,12 +6,12 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
 require('./models/User');
-require('/models/Story');
-require('/services/passport');
+require('./models/Story');
+require('./services/passport');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, {useMongoClient: true});
+mongoose.connect(keys.mongoURI, {useUnifiedTopology: true, useNewUrlParser: true});
 
 const app = express();
 
